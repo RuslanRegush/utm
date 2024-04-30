@@ -1,0 +1,935 @@
+<project projectname="Laborator1" projectauthor="Administrator" title="TeslaSCADA2 Runtime" screenwidth="2200" screenheight="1800" screendiffers="false" runscreenwidth="800" runscreenheight="600" updateperiod="1000" eventsdbname="events" historydbname="history" usetableforeverytag="false" storagedbperiod="2" archivesince="9" notpriority="100" defaultfont="0" certificatename="TeslaSCADA2" certperiod="3650" showserverevents="true" usetelegrambot="false" botnotpriority="-1" parentpath="C:\TeslaSCADA_IDE\app" bottokenuse="false" bottokenname="" ensavetags="false" maxattempts="3" savetagsdbname="savetagsdb" autologout="false" logouttime="15" usemultimonitors="false">
+   <windows>
+      <window name="Laborator1" color="0xffffffff" type="0" windowheight="1800" windowwidth="2200" usepassword="false" password="" groupname="" subgroupname="" posx="-1000" posy="-1000" accesslevel="0">
+         <objects>
+            <objectView class="tesla.scada2.model.objects.PumpMotorView" name="Motor" posx="812.0" posy="686.0" width="75.0" height="75.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Value" value="75" type="1" truecolor="0x008000ff" falsecolor="0xff0000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.FanRoundView" name="Round fan" posx="817.0" posy="610.0" width="69.0" height="69.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0">
+               <property key="rotationindicator">
+                  <property class="tesla.scada2.model.properties.RotateIndicatorProperty" tagname="Value" value="50" type="1" speed="5000"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ValveBallView" name="Ball valve" posx="731.0" posy="446.0" width="98.0" height="117.0" angle="0" lock="false" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="Value" value="90" type="1"/>
+               </property>
+               <property key="color">
+                  <property class="tesla.scada2.model.properties.ColorProperty" tagname="Value" value="90" type="1" truecolor="0xff0000ff" falsecolor="0x008000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight" posx="656.0" posy="447.0" width="75.0" height="115.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight1" posx="828.0" posy="447.0" width="60.0" height="115.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Bow" posx="886.0" posy="470.0" width="112.0" height="97.0" angle="270" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight2" posx="905.0" posy="582.0" width="103.0" height="100.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.SwitchView" name="Switch" posx="977.0" posy="470.0" width="48.0" height="58.0" angle="0" lock="false" text="Label" textcolor="0x000000ff" fillcolor="0xd3d3d3ff" texton="ON" textoff="OFF" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight3" posx="785.0" posy="739.0" width="135.0" height="66.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.PumpStandView" name="Stand-up pump" posx="716.0" posy="724.0" width="75.0" height="75.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Value" value="50" type="1" truecolor="0x008000ff" falsecolor="0xff0000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight4" posx="1023.0" posy="627.0" width="60.0" height="56.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.VerticalTankView" name="Vertical tank" posx="917.0" posy="671.0" width="157.0" height="150.0" angle="0" lock="false" text="Value" color="0x808080ff" fillcolor="0x0000ffff" type3d="0" fontsize="0">
+               <property key="filling">
+                  <property class="tesla.scada2.model.properties.FillingProperty" tagname="Value" minimumvalue="0.0" maximumvalue="100.0"/>
+               </property>
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Value" value="75" type="1" truecolor="0xff0000ff" falsecolor="0xccffffff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TeePipeView" name="Tee" posx="1022.0" posy="568.0" width="62.0" height="59.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight5" posx="1080.0" posy="571.0" width="80.0" height="56.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Position valve" posx="1160.0" posy="578.0" width="75.0" height="42.0" angle="0" lock="false" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight6" posx="1235.0" posy="567.0" width="179.0" height="65.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight7" posx="1020.0" posy="498.0" width="70.0" height="63.0" angle="90" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Bow1" posx="1033.0" posy="441.0" width="61.0" height="58.0" angle="180" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight8" posx="1094.0" posy="425.0" width="75.0" height="66.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ValvePositionView" name="Position valve1" posx="1169.0" posy="435.0" width="75.0" height="44.0" angle="0" lock="false" fillcolor="0xd3d3d3ff" type3d="0" indicatorcolor="0x008000ff">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.StraightPipeView" name="Straight9" posx="1244.0" posy="423.0" width="75.0" height="69.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.EllipseView" name="Ellipse" posx="103.0" posy="355.0" width="35.0" height="35.0" angle="0" lock="false" color="0xcccc33ff" linewidth="2" fill="true" fillcolor="0xe64d4dff">
+               <property key="motion">
+                  <property class="tesla.scada2.model.properties.MotionProperty" tagname="Value">
+                     <motionrange>
+                        <motionRange from="1.0" to="100.0" motionx="300" motiony="0"/>
+                     </motionrange>
+                  </property>
+               </property>
+               <property key="rotation">
+                  <property class="tesla.scada2.model.properties.RotationProperty" rotationanglemin="0.0" rotationanglemax="360.0" rotationvaluemin="0.0" rotationvaluemax="100.0" pivotx="17.5" pivoty="17.5"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.conveyors.ConveyorSVG1" name="Belt conveyor1" posx="29.0" posy="389.0" width="387.0" height="57.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.food.FoodSVG7" name="Mixer 2" posx="413.0" posy="466.0" width="244.0" height="67.0" angle="0" lock="false" usefillcolor="true" fillcolor="0xccccccff">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Value" value="1" type="1" truecolor="0x008000ff" falsecolor="0xff0000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.PumpView" name="Pump" posx="265.0" posy="477.0" width="75.0" height="55.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Value" value="1" type="1" truecolor="0x008000ff" falsecolor="0xff0000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.buttons.ButtonSVG18" name="Switch 10" posx="869.0" posy="238.0" width="45.0" height="75.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="Value" functiontype="4" value="0" title="Enter value" screenname="" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.symbols.SymbolSVG7" name="Danger sign" posx="855.0" posy="159.0" width="75.0" height="75.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="100" type="0"/>
+               </property>
+               <property key="flash">
+                  <property class="tesla.scada2.model.properties.FlashProperty" tagname="Value" value="100" type="0" trueflashduration="1000" falseflashduration="0">
+                     <durationrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.pipes.PipeSVG25" name="Reducer" posx="415.0" posy="395.0" width="71.0" height="48.0" angle="90" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.pipes.PipeSVG1" name="Straight10" posx="339.0" posy="494.0" width="75.0" height="21.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.RangeIndicatorView" name="Range indicator" posx="1087.0" posy="681.0" width="37.0" height="135.0" angle="0" lock="false" color="0x0000ffff" fillcolor="0x808080ff" bordercolor="0x000000ff" type="0">
+               <property key="rangevalue">
+                  <property class="tesla.scada2.model.properties.RangeValueProperty" tagname="Value" minimumvalue="0.0" maximumvalue="100.0" decimalpos="0" showvalue="false" showhistory="false" historycolor="0x0000ffff" timeperiod="0">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ScaleView" name="Scale" posx="1123.0" posy="688.0" width="75.0" height="122.0" angle="0" lock="false" color="0x000000ff" linewidth="2" useborder="false" scale2="true" scale3="true" scaleinterval1="2" scaleinterval2="4" scaleinterval3="2" sizemarkers1="30" sizemarkers2="20" sizemarkers3="10" type="0" usedigit="false" max="100.0" min="0.0" decimalpos="0" fontsize="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CounterRectView" name="Counter rectangle" posx="1168.0" posy="502.0" width="75.0" height="37.0" angle="0" lock="false" color="0xd3d3d3ff" textcolor="0x90ee90ff" type3d="0">
+               <property key="countercontrol">
+                  <property class="tesla.scada2.model.properties.CounterControlProperty" tagname="Amestec" minimumvalue="0.0" maximumvalue="100.0" delta="1.0" decimalpos="0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.CounterRectView" name="Counter rectangle1" posx="1168.0" posy="634.0" width="75.0" height="37.0" angle="0" lock="false" color="0xd3d3d3ff" textcolor="0x90ee90ff" type3d="0">
+               <property key="countercontrol">
+                  <property class="tesla.scada2.model.properties.CounterControlProperty" tagname="Amestec" minimumvalue="0.0" maximumvalue="100.0" delta="1.0" decimalpos="0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.Digital4DigitMeterView" name="4 digit meter" posx="810.0" posy="551.0" width="75.0" height="50.0" angle="0" lock="false" text="Temperature" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.Digital6DigitMeterView" name="6 digit meter" posx="655.0" posy="699.0" width="75.0" height="50.0" angle="0" lock="false" text="Pump speed" textcolor="0x90ee90ff" bordercolor="0xa9a9a9ff" fillcolor="0x000000ff" type3d="0">
+               <property key="value">
+                  <property class="tesla.scada2.model.properties.ValueProperty" tagname="EmptyValue" minimumvalue="50.0" maximumvalue="100.0" decimalpos="0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.SliderView" name="Slider" posx="953.0" posy="195.0" width="37.0" height="112.0" angle="0" lock="false" color="0x808080ff" fillcolor="0x0000ffff" type3d="0">
+               <property key="slidercontrol">
+                  <property class="tesla.scada2.model.properties.SliderControlProperty" tagname="Value" minimumvalue="0.0" maximumvalue="100.0" snaptotick="true" decimalpos="0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Text/EditField" posx="928.0" posy="828.0" width="143.0" height="45.0" angle="0" lock="false" text="Label" fonttype="0" fontsize="15" textplacement="1" textcolor="0x0000ffff" useborder="true" bordercolor="0xb3b3b3ff" linewidth="3" fill="true" fillcolor="0xf2f2f2ff" underline="false">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Value" value="0" type="6" truecolor="0xff0000ff" falsecolor="0x008000ff">
+                     <colorrange>
+                        <colorRange from="0.0" to="50.0" color="0xffb380ff"/>
+                        <colorRange from="50.0" to="75.0" color="0xff9966ff"/>
+                        <colorRange from="75.0" to="90.0" color="0xcc6633ff"/>
+                        <colorRange from="90.0" to="100.0" color="0x993300ff"/>
+                     </colorrange>
+                  </property>
+               </property>
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="Value" value="0" type="7" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0" beforedecimalpos="0">
+                     <textrange>
+                        <textRange from="0.0" to="50.0" text="Ok"/>
+                        <textRange from="50.0" to="75.0" text="On Pompa Nr.2"/>
+                        <textRange from="75.0" to="90.0" text="On Mottor"/>
+                        <textRange from="90.0" to="100.0" text="Emergency Off"/>
+                     </textrange>
+                  </property>
+               </property>
+               <property key="flash">
+                  <property class="tesla.scada2.model.properties.FlashProperty" tagname="Value" value="90" type="1" trueflashduration="1000" falseflashduration="0">
+                     <durationrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TrendView" name="Trend" posx="24.0" posy="911.0" width="427.0" height="295.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0xffffffff" gridcolor="0x808080ff" linestyle="Solid" gridlinewidth="1" horizontally="5" vertically="4" maximum="100.0" minimum="0.0" fontsize="10" markcolor="0x000000ff" timeformat="mm:ss" defaulttimeperiod="20">
+               <scripts/>
+               <curves>
+                  <curve tagname="Value" curvename="Curve" linewidth="1" color="0x6680e6ff" type="0"/>
+               </curves>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.EventsTableView" name="Events log" posx="50.0" posy="1251.0" width="500.0" height="302.0" angle="0" lock="false" title="Events" titlefontsize="12" unackcolor="0xadd8e6ff" ackcolor="0xffffffff" timeformat="d/MM hh:mm:ss" nameenable="true" timeenable="true" typeenable="true" priorityenable="true" messageenable="true" valueenable="true" acktimeenable="false" namewidth="60" timewidth="100" typewidth="60" prioritywidth="40" messagewidth="180" valuewidth="60" acktimewidth="0" nametitle="Name" timetitle="Time" typetitle="Type" prioritytitle="Priority" messagetitle="Message" valuetitle="Value" acktimetitle="Ack.time" onlyactivestate="false" onlyunack="false" usetitle="true">
+               <scripts/>
+               <prioritycolorrange>
+                  <colorRange from="0.0" to="200.0" color="0xff0000ff"/>
+                  <colorRange from="200.0" to="800.0" color="0xffff00ff"/>
+                  <colorRange from="800.0" to="1000.0" color="0x008000ff"/>
+               </prioritycolorrange>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Text/EditField1" posx="852.0" posy="289.0" width="75.0" height="75.0" angle="0" lock="false" text="Reset" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" underline="false">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ConeTankView" name="WaterTank" posx="1307.0" posy="258.0" width="112.0" height="150.0" angle="0" lock="false" text="Water. ml" color="0x334db3ff" fillcolor="0x333333ff" type3d="0" fontsize="0">
+               <property key="filling">
+                  <property class="tesla.scada2.model.properties.FillingProperty" tagname="WaterTank" minimumvalue="0.0" maximumvalue="800.0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ConeTankView" name="Cone tank1" posx="1407.0" posy="401.0" width="112.0" height="150.0" angle="0" lock="false" text="Value" color="0xffff4dff" fillcolor="0xffffffff" type3d="0" fontsize="0">
+               <property key="filling">
+                  <property class="tesla.scada2.model.properties.FillingProperty" tagname="SirupTank" minimumvalue="0.0" maximumvalue="100.0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Bow2" posx="1309.0" posy="404.0" width="75.0" height="75.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.BowPipeView" name="Bow3" posx="1411.0" posy="550.0" width="75.0" height="71.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ToggleButtonView" name="Toggle button" posx="253.0" posy="235.0" width="88.0" height="48.0" angle="0" lock="false" text="OFF" textcolor="0x008000ff" fillcolor="0xd3d3d3ff" type3d="0" fonttype="0" fontsize="20" textplacement="1" animation="true" underline="false">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="PowerOn" value="true" type="0"/>
+               </property>
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="PowerOn" value="true" type="0" truecolor="0xff0000ff" falsecolor="0x008000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <property key="textcolor">
+                  <property class="tesla.scada2.model.properties.TextColorProperty" tagname="PowerOn" value="true" type="0" truecolor="0xff0000ff" falsecolor="0x008000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="PowerOn" functiontype="2" value="0" title="Enter value" screenname="" command=""/>
+               </property>
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="PowerOn" value="true" type="1" truetext="Turn Off" falsetext="Turn On" textbefore="" textafter="" decimalpos="0" beforedecimalpos="0">
+                     <textrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.PressButtonView" name="EmptyValue" posx="1082.0" posy="833.0" width="152.0" height="37.0" angle="0" lock="false" text="Transport Juice" textcolor="0xffffffff" fillcolor="0x0000ffff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true" underline="false">
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="Transporte" functiontype="3" value="1" title="Enter value" screenname="" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.OvalIndicatorView" name="Oval Indicator" posx="212.0" posy="481.0" width="37.0" height="37.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="PumpApple" value="0" type="5"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.OvalIndicatorView" name="Oval Indicator1" posx="1455.0" posy="317.0" width="37.0" height="37.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="WaterTank" value="10" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ButtonView" name="Button" posx="198.0" posy="542.0" width="75.0" height="37.0" angle="0" lock="false" text="Start" textcolor="0xffffffff" fillcolor="0x008000ff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true" underline="false">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="PreparingJuice" value="0" type="5" truecolor="0x99b3ffff" falsecolor="0x99b3ffff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="StartPreparingJuice" functiontype="3" value="0" title="Enter value" screenname="" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ToggleButtonView" name="Cvota" posx="936.0" posy="125.0" width="75.0" height="37.0" angle="0" lock="false" text="OFF" textcolor="0x008000ff" fillcolor="0xd3d3d3ff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true" underline="false">
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="JuiceRecipe" functiontype="3" value="0" title="Enter value" screenname="" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="625.0" posy="912.0" width="193.0" height="97.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="90" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Text/EditField2" posx="1150.0" posy="657.0" width="48.0" height="63.0" angle="0" lock="false" text="100" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" underline="false">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Text/EditField3" posx="1135.0" posy="709.0" width="75.0" height="75.0" angle="0" lock="false" text="50" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" underline="false">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Text/EditField4" posx="1139.0" posy="768.0" width="75.0" height="75.0" angle="0" lock="false" text="0" fonttype="0" fontsize="20" textplacement="1" textcolor="0x0000ffff" useborder="false" bordercolor="0x000000ff" linewidth="2" fill="false" fillcolor="0xffffffff" underline="false">
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ButtonView" name="Button1" posx="964.0" posy="400.0" width="75.0" height="37.0" angle="0" lock="false" text="MIX" textcolor="0xffffffff" fillcolor="0xb3b3b3ff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true" underline="false">
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="Amestec" functiontype="3" value="0" title="Enter value" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ButtonView" name="Button2" posx="1437.0" posy="269.0" width="75.0" height="37.0" angle="0" lock="false" text="Water" textcolor="0xffffffff" fillcolor="0x334db3ff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true" underline="false">
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="Water" functiontype="3" value="0" title="Enter value" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.ButtonView" name="Button3" posx="1525.0" posy="412.0" width="75.0" height="37.0" angle="0" lock="false" text="Sirup" textcolor="0xffffffff" fillcolor="0xffff4dff" type3d="0" fonttype="0" fontsize="0" textplacement="1" animation="true" underline="false">
+               <property key="buttoncontrol">
+                  <property class="tesla.scada2.model.properties.ButtonControlProperty" tagname="Sirup" functiontype="3" value="0" title="Enter value" command=""/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="840.0" posy="908.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="80" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="1083.0" posy="905.0" width="193.0" height="104.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="70" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="630.0" posy="1046.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="60" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="848.0" posy="1046.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="50" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="1073.0" posy="1042.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="40" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="622.0" posy="1167.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="30" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="847.0" posy="1166.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="20" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.svg.vehicles.VehicleSVG4" name="Liquid vacuum tanker" posx="1073.0" posy="1165.0" width="201.0" height="99.0" angle="0" lock="false" usefillcolor="false" fillcolor="0x808080ff">
+               <property key="visibility">
+                  <property class="tesla.scada2.model.properties.VisibilityProperty" tagname="Value" value="10" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.OvalIndicatorView" name="Oval Indicator1" posx="1541.0" posy="464.0" width="37.0" height="37.0" angle="0" lock="false" falsecolor="0xff0000ff" truecolor="0x008000ff" type3d="0">
+               <property key="indicator">
+                  <property class="tesla.scada2.model.properties.IndicatorProperty" tagname="SirupTank" value="10" type="2"/>
+               </property>
+               <scripts/>
+            </objectView>
+         </objects>
+         <scriptnames/>
+      </window>
+   </windows>
+   <scripts>
+      <script name="SetRecipe" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>// Set recipe values
+if (Tags.JuiceRecipe) {
+	
+Tags.SirupToAdd = 25;
+Tags.WaterToAdd = 150;
+}</sttext>
+         <opcodes>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>JuiceRecipe</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>25</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>SirupToAdd</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>150</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>WaterToAdd</value>
+            </opcode>
+         </opcodes>
+      </script>
+      <script name="EmptyValue" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>Tags.Value = 0;</sttext>
+         <opcodes/>
+      </script>
+      <script name="StartPreparingJuice" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>Tags.PreparingJuice = true;
+Tags.PumpApple = true;
+Tags.PumpJuice = true;</sttext>
+         <opcodes>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>PreparingJuice</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>PumpApple</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>PumpJuice</value>
+            </opcode>
+         </opcodes>
+      </script>
+      <script name="Script0" color="0xd3d3d3ff" type="0" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>if (Tags.PowerOn ) {
+	if (Tags.PreparingJuice){
+
+		// 1st stage
+		if(Tags.PumpJuice) {
+			if(Tags.WaterAdded &lt; Tags.WaterToAdd) {
+				Tags.WaterTank = Tags.WaterTank - 20;
+				Tags.WaterAdded = Tags.WaterAdded + 20;
+			} 
+			else {
+				Tags.PumpJuice = false;
+				// Tags.WaterAdded = 0;
+			}
+		}
+		
+		if(Tags.PumpApple) {
+			if(Tags.SirupAdded &lt; Tags.SirupToAdd) {
+				Tags.SirupTank = Tags.SirupTank - 5;
+				Tags.SirupAdded = Tags.SirupAdded + 5;
+				Tags.Value = Tags.Value + 5;
+			} 
+			}
+			}
+			}
+			</sttext>
+         <opcodes>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>PowerOn</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>38</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>PreparingJuice</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>36</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>PumpJuice</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>16</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterToAdd</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterAdded</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>20</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>20</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterAdded</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>WaterAdded</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>PumpJuice</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>PumpApple</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>17</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupToAdd</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupAdded</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1"/>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>13</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupAdded</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>SirupAdded</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1"/>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+         </opcodes>
+      </script>
+      <script name="Amestecarea" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>if (Tags.Amestec) {
+        if (Tags.Value &lt; 100 &amp;&amp; Tags.SirupTank &gt; 10 &amp;&amp; Tags.WaterTank &gt; 10){
+        Tags.Amestec = true;
+	Tags.Value = Tags.Value + 10;
+	Tags.SirupTank = Tags.SirupTank - 5;
+	Tags.WaterTank = Tags.WaterTank - 5; 
+}
+else { 
+Tags.Amestec = false;
+	
+}}</sttext>
+         <opcodes>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Amestec</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>30</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="BOOLEAN_AND" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="BOOLEAN_AND" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>16</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>true</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Amestec</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Amestec</value>
+            </opcode>
+         </opcodes>
+      </script>
+      <script name="AddWater" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>if (Tags.Water) {
+if (Tags.WaterTank &lt; 800){
+Tags.WaterTank = Tags.WaterTank + 10;
+}}
+else {
+	Tags.Water = false;
+}
+</sttext>
+         <opcodes>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Water</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>800</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>WaterTank</value>
+            </opcode>
+            <opcode type="JUMP" datatype="-1">
+               <value>3</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Water</value>
+            </opcode>
+         </opcodes>
+      </script>
+      <script name="AddSirup" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>if (Tags.Sirup) {
+if (Tags.SirupTank &lt; 100){
+Tags.SirupTank = Tags.SirupTank + 10;
+}
+else Tags.Sirup = false;
+}</sttext>
+         <opcodes>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Sirup</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>11</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>100</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="BINARY_LT" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="BINARY_ADD" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>SirupTank</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Sirup</value>
+            </opcode>
+         </opcodes>
+      </script>
+      <script name="TransporteSuc" color="0xd3d3d3ff" type="2" windowheight="1800" windowwidth="2200" groupname="" subgroupname="" language="1" everycycle="false" extype="0" runonuithread="false">
+         <objects/>
+         <links/>
+         <sttext>if (Tags.Transporte) {
+if (Tags.Value &gt; 0){
+Tags.Value = Tags.Value - 10;
+}
+else Tags.Sirup = false;
+}</sttext>
+         <opcodes>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Transporte</value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>11</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>0</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="BINARY_GT" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="JUMP_IF_FALSE" datatype="-1">
+               <value>5</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="4">
+               <value>10</value>
+            </opcode>
+            <opcode type="LOAD_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="BINARY_REM" datatype="-1">
+               <value></value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Value</value>
+            </opcode>
+            <opcode type="LOAD_CONST" datatype="0">
+               <value>false</value>
+            </opcode>
+            <opcode type="STORE_TAG" datatype="-1">
+               <value>Sirup</value>
+            </opcode>
+         </opcodes>
+      </script>
+   </scripts>
+   <servers>
+      <server class="tesla.scada2.model.servers.ModbusServer" name="Demo" interval="1000" ipaddress="192.168.0.101" port="502" type="TCP" requesttype="0" rtuviatcp="false" withoutfun6="false"/>
+   </servers>
+   <tags>
+      <tag name="Amestec" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="Amestecarea" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="FirstStep" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="EmptyValue" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="EmptyValue" scriptvalue="0.0" scripttype="5" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="JuiceRecipe" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="SetRecipe" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="PowerOn" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="PreparingJuice" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="SetRecipe" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="PumpApple" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="FirstStep" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="PumpJuice" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="FirstStep" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="Sirup" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="AddSirup" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="FirstStep" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="SirupAdded" datatype="6" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="Recipe" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="SirupTank" datatype="6" accessmode="1" initialpv="100.0" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="true" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="true" storageperiod="10000" storeindb="true" enablealarming="true" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="true" lolimit="50.0" lopriority="500" lomessage="Sirup is low" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="MainTanks" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="SirupToAdd" datatype="6" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="Recipe" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="StartPreparingJuice" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="StartPreparingJuice" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="SystemCurrentDateTime" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current date and time" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeDay" datatype="3" accessmode="1" initialpv="01" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current day" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeHour" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current hour" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeMinute" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current minute" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeMonth" datatype="3" accessmode="1" initialpv="01" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current month" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeNewDay" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="New day occur" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeNewHour" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="New hour occur" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeNewMinute" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="New minute occur" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeSecond" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current second" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeYear" datatype="3" accessmode="1" initialpv="1970" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current year" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentScreen" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current screen name" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserAccessLevel" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user access level" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserAccessLevelBelow500" datatype="0" accessmode="1" initialpv="true" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user access level below 500" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserAccessLevelGreater500" datatype="0" accessmode="1" initialpv="true" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user access level greater 500" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserName" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user name" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemPreviousScreen" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Previous screen name" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="Transporte" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="TransporteSuc" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="Value" datatype="6" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="true" storageperiod="10000" storeindb="true" enablealarming="true" enablehihi="true" hihilimit="90.0" hihipriority="100" hihimessage="Value is over 90" enablehi="true" hilimit="75.0" hipriority="100" himessage="Value is over 75" enablelo="false" lolimit="50.0" lopriority="100" lomessage="" enablelolo="false" lololimit="1.0" lolopriority="50" lolomessage="Start work" enablenormal="true" normalpriority="900" normalmessage="Value &lt; 50" deadband="1.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="MainTanks" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="Water" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="true" scriptname="AddWater" scriptvalue="1.0" scripttype="0" scriptdeadband="0.0" groupname="FirstStep" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="WaterAdded" datatype="6" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="Recipe" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="WaterTank" datatype="6" accessmode="1" initialpv="400" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="true" rawvaluemax="200.0" rawvaluemin="0.0" euvaluemax="200.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="true" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="true" lolimit="50.0" lopriority="500" lomessage="Water is low" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="MainTanks" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="WaterToAdd" datatype="6" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="Local" pvinputsource="" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="Recipe" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+   </tags>
+   <users/>
+   <libraries/>
+   <recipes/>
+   <sounds/>
+   <botmessage></botmessage>
+   <mqttpublisher enabled="false" broker="tcp://m11.cloudmqtt.com:16160" Qos="0" enablessl="false" enableclientcert="false" pem="false" protocol="TLSv1.2" clientid="" format="" readformat=""/>
+   <emailclient enableclient="false" host="smtp.gmail.com" port="587" tlsssl="0" auth="true" emaildeponpr="false">
+      <message></message>
+      <emailsranges/>
+   </emailclient>
+   <gsmmodem enablegsmmodem="false" portid="" baudrate="9600" flowcontrol="0" databits="3" stopbits="0" parity="1" phonenumbers="" notpriority="-1">
+      <message></message>
+   </gsmmodem>
+   <groups>
+      <string>System</string>
+      <string>MainTanks</string>
+      <string>FirstStep</string>
+      <string>Recipe</string>
+   </groups>
+   <subgroups/>
+   <subscreengroups/>
+   <subscriptgroups/>
+   <opcuaserver enabled="false" tcpport="8666" useanonymouspolicy="true" useusernamepasswordpolicy="true" usesecuritynone="true" useBASIC128RSA15_SIGN="true" useBASIC128RSA15_SIGN_ENCRYPT="true" useBASIC256_SIGN="true" useBASIC256_SIGN_ENCRYPT="true" useBASIC256SHA256_SIGN="true" useBASIC256SHA256_SIGN_ENCRYPT="true" servercertificatename="opcuacertificate" servercertdays="3650"/>
+   <webserver enabled="false" http="true" host="localhost" httpport="8080" https="false" httpsport="8443" truestore="" truestorepassword="" keystore="" keystorepassword="" clientauthenabled="false" useotherproject="false" clientprojectfile=""/>
+   <httpserver enabled="false" host="localhost" port="8000" https="false"/>
+   <reports/>
+   <mainmenu enable="false" posy="0" width="200" height="400" color="0x808080ff" spacing="5" tail="5">
+      <buttons class="java.util.concurrent.CopyOnWriteArrayList"/>
+   </mainmenu>
+   <redundantserver enabled="false" uri="opc.tcp://192.168.0.102:4841" type="0"/>
+   <push enablepush="false" topic="" title="" priority="100">
+      <message></message>
+   </push>
+   <teslacloud enable="false"/>
+   <monitors/>
+</project>

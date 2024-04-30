@@ -1,0 +1,145 @@
+<project projectname="NewProject1" projectauthor="Administrator" title="TeslaSCADA2 Runtime" screenwidth="800" screenheight="600" screendiffers="false" runscreenwidth="800" runscreenheight="600" updateperiod="1000" eventsdbname="events" historydbname="history" usetableforeverytag="false" storagedbperiod="2" archivesince="9" notpriority="100" defaultfont="0" certificatename="TeslaSCADA2" certperiod="3650" showserverevents="true" usetelegrambot="false" botnotpriority="-1" parentpath="C:\TeslaSCADA_IDE\app" bottokenuse="false" bottokenname="" ensavetags="false" maxattempts="3" savetagsdbname="savetagsdb" autologout="false" logouttime="15" usemultimonitors="false">
+   <windows>
+      <window name="Boiler" color="0xf2f2f2ff" type="0" windowheight="600" windowwidth="800" usepassword="false" password="" groupname="" subgroupname="" posx="-1000" posy="-1000" accesslevel="0">
+         <objects>
+            <objectView class="tesla.scada2.model.objects.VerticalTankView" name="Vertical tank" posx="83.0" posy="120.0" width="215.0" height="202.0" angle="0" lock="false" text="Value" color="0x808080ff" fillcolor="0x0000ffff" type3d="0" fontsize="0">
+               <property key="filling">
+                  <property class="tesla.scada2.model.properties.FillingProperty" tagname="Level" minimumvalue="0.0" maximumvalue="100.0"/>
+               </property>
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Level" value="70" type="1" truecolor="0xff0000ff" falsecolor="0x008000ff">
+                     <colorrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.SliderView" name="Slider" posx="324.0" posy="168.0" width="37.0" height="112.0" angle="0" lock="false" color="0x808080ff" fillcolor="0x0000ffff" type3d="0">
+               <property key="slidercontrol">
+                  <property class="tesla.scada2.model.properties.SliderControlProperty" tagname="Level" minimumvalue="0.0" maximumvalue="100.0" snaptotick="true" decimalpos="0"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TextView" name="Text/EditField" posx="140.0" posy="33.0" width="109.0" height="65.0" angle="0" lock="false" text="Label" fonttype="0" fontsize="25" textplacement="1" textcolor="0x0000ffff" useborder="true" bordercolor="0xb3b3b3ff" linewidth="2" fill="true" fillcolor="0x666666ff" underline="false">
+               <property key="fillcolor">
+                  <property class="tesla.scada2.model.properties.FillColorProperty" tagname="Level" value="0" type="6" truecolor="0xff0000ff" falsecolor="0x008000ff">
+                     <colorrange>
+                        <colorRange from="0.0" to="70.0" color="0x99cc99ff"/>
+                        <colorRange from="70.0" to="90.0" color="0xffff66ff"/>
+                        <colorRange from="90.0" to="100.0" color="0xe64d4dff"/>
+                     </colorrange>
+                  </property>
+               </property>
+               <property key="textinput">
+                  <property class="tesla.scada2.model.properties.TextInputProperty" tagname="Level" value="0" type="7" truetext="" falsetext="" textbefore="" textafter="" decimalpos="0" beforedecimalpos="0">
+                     <textrange>
+                        <textRange from="0.0" to="70.0" text="Normal"/>
+                        <textRange from="70.0" to="90.0" text="Warning"/>
+                        <textRange from="90.0" to="100.0" text="Fault"/>
+                     </textrange>
+                  </property>
+               </property>
+               <property key="flash">
+                  <property class="tesla.scada2.model.properties.FlashProperty" tagname="Level" value="90" type="1" trueflashduration="1000" falseflashduration="0">
+                     <durationrange/>
+                  </property>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.TrendView" name="Trend" posx="362.0" posy="22.0" width="415.0" height="229.0" angle="0" lock="false" color="0x000000ff" linewidth="1" fill="true" fillcolor="0xffffffff" gridcolor="0x808080ff" linestyle="Solid" gridlinewidth="1" horizontally="5" vertically="4" maximum="100.0" minimum="0.0" fontsize="10" markcolor="0x000000ff" timeformat="mm:ss" defaulttimeperiod="10">
+               <scripts/>
+               <curves>
+                  <curve tagname="Level" curvename="Curve" linewidth="1" color="0x99b3ffff" type="0"/>
+               </curves>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.EventsTableView" name="Events log" posx="37.0" posy="353.0" width="675.0" height="230.0" angle="0" lock="false" title="Events" titlefontsize="12" unackcolor="0xadd8e6ff" ackcolor="0xffffffff" timeformat="d/MM hh:mm:ss" nameenable="true" timeenable="true" typeenable="true" priorityenable="true" messageenable="true" valueenable="true" acktimeenable="false" namewidth="60" timewidth="100" typewidth="60" prioritywidth="40" messagewidth="180" valuewidth="60" acktimewidth="0" nametitle="Name" timetitle="Time" typetitle="Type" prioritytitle="Priority" messagetitle="Message" valuetitle="Value" acktimetitle="Ack.time" onlyactivestate="false" onlyunack="false" usetitle="true">
+               <scripts/>
+               <prioritycolorrange>
+                  <colorRange from="0.0" to="200.0" color="0xff0000ff"/>
+                  <colorRange from="200.0" to="800.0" color="0xffff00ff"/>
+                  <colorRange from="800.0" to="1000.0" color="0x008000ff"/>
+               </prioritycolorrange>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.FanRoundView" name="Round fan" posx="431.0" posy="274.0" width="75.0" height="75.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0">
+               <property key="rotation">
+                  <property class="tesla.scada2.model.properties.RotationProperty" tagname="Level" rotationanglemin="0.0" rotationanglemax="360.0" rotationvaluemin="0.0" rotationvaluemax="70.0" pivotx="37.5" pivoty="37.5"/>
+               </property>
+               <property key="rotationindicator">
+                  <property class="tesla.scada2.model.properties.RotateIndicatorProperty" tagname="Level" value="70" type="2" speed="4000"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.FanRoundView" name="Round fan1" posx="549.0" posy="275.0" width="75.0" height="75.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0">
+               <property key="rotation">
+                  <property class="tesla.scada2.model.properties.RotationProperty" rotationanglemin="0.0" rotationanglemax="360.0" rotationvaluemin="0.0" rotationvaluemax="90.0" pivotx="37.5" pivoty="37.5"/>
+               </property>
+               <property key="rotationindicator">
+                  <property class="tesla.scada2.model.properties.RotateIndicatorProperty" tagname="Level" value="71" type="1" speed="3000"/>
+               </property>
+               <scripts/>
+            </objectView>
+            <objectView class="tesla.scada2.model.objects.FanRoundView" name="Round fan2" posx="674.0" posy="275.0" width="75.0" height="75.0" angle="0" lock="false" fillcolor="0x808080ff" type3d="0" rotation="0">
+               <property key="rotationindicator">
+                  <property class="tesla.scada2.model.properties.RotateIndicatorProperty" tagname="Level" value="90" type="1" speed="1000"/>
+               </property>
+               <scripts/>
+            </objectView>
+         </objects>
+         <scriptnames/>
+      </window>
+   </windows>
+   <scripts/>
+   <servers>
+      <server class="tesla.scada2.model.servers.ModbusServer" name="PLc Modbus" interval="1000" ipaddress="192.168.0.104" port="502" type="TCP" requesttype="0" rtuviatcp="false" withoutfun6="false"/>
+   </servers>
+   <tags>
+      <tag name="Level" datatype="6" accessmode="1" initialpv="0.0" numberofelements="10" elementtype="-1" pvinputserver="PLc Modbus" pvinputsource="s=1;pt=3;o=0;dt=2;" outputdiffers="false" pvoutputserver="Local" pvoutputsource="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="true" storageperiod="10000" storeindb="true" enablealarming="true" enablehihi="true" hihilimit="90.0" hihipriority="50" hihimessage="Level is over 90" enablehi="true" hilimit="70.0" hipriority="500" himessage="Level is over 70" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="1.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="" subgroupname="" description="" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="false"/>
+      <tag name="SystemCurrentDateTime" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current date and time" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeDay" datatype="3" accessmode="1" initialpv="01" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current day" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeHour" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current hour" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeMinute" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current minute" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeMonth" datatype="3" accessmode="1" initialpv="01" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current month" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeNewDay" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="New day occur" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeNewHour" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="New hour occur" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeNewMinute" datatype="0" accessmode="1" initialpv="false" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="New minute occur" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeSecond" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current second" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentDateTimeYear" datatype="3" accessmode="1" initialpv="1970" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current year" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentScreen" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current screen name" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserAccessLevel" datatype="3" accessmode="1" initialpv="0" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user access level" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserAccessLevelBelow500" datatype="0" accessmode="1" initialpv="true" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user access level below 500" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserAccessLevelGreater500" datatype="0" accessmode="1" initialpv="true" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user access level greater 500" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemCurrentUserName" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Current user name" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+      <tag name="SystemPreviousScreen" datatype="7" accessmode="1" initialpv="" numberofelements="10" elementtype="0" pvinputserver="" outputdiffers="false" pvoutputserver="" enablescaling="false" rawvaluemax="100.0" rawvaluemin="0.0" euvaluemax="100.0" euvaluemin="0.0" offset="0.0" enablehistorizing="false" storageperiod="10000" storeindb="false" enablealarming="false" enablehihi="false" hihilimit="1.0" hihipriority="50" enablehi="false" hilimit="0.0" hipriority="500" enablelo="false" lolimit="0.0" lopriority="500" enablelolo="false" lololimit="0.0" lolopriority="50" enablenormal="false" normalpriority="900" deadband="0.0" opcuaevent="false" enablescript="false" scriptname="" scriptvalue="0.0" scripttype="0" scriptdeadband="0.0" groupname="System" subgroupname="" description="Previous screen name" usehistorydeadband="false" historydeadband="0.0" accesslevel="0" system="true"/>
+   </tags>
+   <users/>
+   <libraries/>
+   <recipes/>
+   <sounds/>
+   <botmessage></botmessage>
+   <mqttpublisher enabled="false" broker="tcp://m11.cloudmqtt.com:16160" Qos="0" enablessl="false" enableclientcert="false" pem="false" protocol="TLSv1.2" clientid="" format="" readformat=""/>
+   <emailclient enableclient="false" host="smtp.gmail.com" port="587" tlsssl="0" auth="true" emaildeponpr="false">
+      <message></message>
+      <emailsranges/>
+   </emailclient>
+   <gsmmodem enablegsmmodem="false" portid="" baudrate="9600" flowcontrol="0" databits="3" stopbits="0" parity="1" phonenumbers="" notpriority="-1">
+      <message></message>
+   </gsmmodem>
+   <groups>
+      <string>System</string>
+   </groups>
+   <subgroups/>
+   <subscreengroups/>
+   <subscriptgroups/>
+   <opcuaserver enabled="false" tcpport="8666" useanonymouspolicy="true" useusernamepasswordpolicy="true" usesecuritynone="true" useBASIC128RSA15_SIGN="true" useBASIC128RSA15_SIGN_ENCRYPT="true" useBASIC256_SIGN="true" useBASIC256_SIGN_ENCRYPT="true" useBASIC256SHA256_SIGN="true" useBASIC256SHA256_SIGN_ENCRYPT="true" servercertificatename="opcuacertificate" servercertdays="3650"/>
+   <webserver enabled="false" http="true" host="localhost" httpport="8080" https="false" httpsport="8443" truestore="" truestorepassword="" keystore="" keystorepassword="" clientauthenabled="false" useotherproject="false" clientprojectfile=""/>
+   <httpserver enabled="false" host="localhost" port="8000" https="false"/>
+   <reports/>
+   <mainmenu enable="false" posy="0" width="200" height="400" color="0x808080ff" spacing="5" tail="5">
+      <buttons class="java.util.concurrent.CopyOnWriteArrayList"/>
+   </mainmenu>
+   <redundantserver enabled="false" uri="opc.tcp://192.168.0.102:4841" type="0"/>
+   <push enablepush="false" topic="" title="" priority="100">
+      <message></message>
+   </push>
+   <teslacloud enable="false"/>
+   <monitors/>
+</project>
