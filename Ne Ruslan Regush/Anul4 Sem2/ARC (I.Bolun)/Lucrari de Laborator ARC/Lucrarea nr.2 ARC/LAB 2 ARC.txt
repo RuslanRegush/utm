@@ -1,0 +1,22 @@
+SWA>en
+SWA#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SWA(config)#vlan 10 
+SWA(config-vlan)#name Admin
+SWA(config-vlan)#vlan 20
+SWA(config-vlan)#name Accounts
+SWA(config-vlan)#vlan 30
+SWA(config-vlan)#name HR
+SWA(config-vlan)#vlan 40
+SWA(config-vlan)#name Voice
+SWA(config-vlan)#vlan 99
+SWA(config-vlan)#name Management
+SWA(config-vlan)#vlan 100
+SWA(config-vlan)#name Native
+SWA(config-vlan)#exit
+
+
+do show vlan brief !
+
+do show ip int brief
+
