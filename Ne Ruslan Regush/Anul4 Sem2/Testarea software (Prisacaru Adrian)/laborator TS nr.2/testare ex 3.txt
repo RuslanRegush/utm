@@ -1,0 +1,56 @@
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class testDivisionByZero {
+
+    @ParameterizedTest
+    @ValueSource(ints = {0, 2, 5}) // Указываем различные значения для параметра y
+    public void testDivision(int y) {
+        int x = 10;
+        int expResult;
+
+        if (y != 0) {
+            expResult = x / y;
+        } else {
+            // Если y равно нулю, ожидаем результат также равный нулю
+            expResult = 0;
+        }
+
+        try {
+            int result = CustomMath.division(x, y);
+            assertEquals(expResult, result);
+        } catch (IllegalArgumentException e) {
+            if (y != 0) {
+                fail("Генерация исключения при ненулевом знаменателе");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+public class CustomMath {
+
+        public static int sum(int x, int y){
+            return x+y; //возвращает результат слажения двух чисел
+        }
+        public static int division(int x, int y){
+            if (y==0) {
+                throw new IllegalArgumentException("devider is 0");
+//бросается исключение
+            }
+            return(x/y); //возвращает результат деления
+        }
+
+    public static void main(String[] args) {
+        // реализация
+    }
+    
+}

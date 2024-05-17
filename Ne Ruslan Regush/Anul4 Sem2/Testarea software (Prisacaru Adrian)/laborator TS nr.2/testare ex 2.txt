@@ -1,0 +1,58 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class testDivisionByZero {
+    @Test
+    public void testDivisionByZero() {
+        int x = 0;
+        int y = 0;
+        int expResult = 0;
+        try {
+            int result=CustomMath.division(x, y);
+            assertEquals(expResult, result);
+            if(y==0) fail("Деление на ноли не создает исключителънои ситуации");
+        }
+        catch(IllegalArgumentException e){
+            if(y!=0) fail("Генерация исключения при ненулевом знаменателе");
+        }
+    }
+}
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class testDivisionByZero {
+
+    @Test
+    public void testDivisionByZero() {
+        int x = 1;
+        int y = 1;
+        int expResult = 0;
+        try {
+            int result = division(x, y);
+            assertEquals(expResult, result);
+            if (y == 0) fail("Деление на ноль не должно создавать исключительной ситуации");
+        } catch (IllegalArgumentException e) {
+            if (y != 0) fail("Генерация исключения при ненулевом знаменателе");
+        }
+    }
+    public static int division(int x, int y){
+        if (y==0) {
+            throw new IllegalArgumentException("devider is 0");
+//бросается исключение
+        }
+        return(x/y); //возвращает результат деления
+    }
+    @Test
+    public void testDivisionByNonZero() {
+        int x = 0;
+        int y = 0;
+        int expResult = 5;
+        int result = division(x, y);
+        assertEquals(expResult, result);
+    }
+}
+
+
