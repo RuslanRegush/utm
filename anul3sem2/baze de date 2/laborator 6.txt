@@ -1,0 +1,150 @@
+-- 1.Să se scrie cele trei interogări de mai jos fără utilizarea operatorilor GROUPING SETS, ROLLUP, CUBE.
+-- A)      SELECT DISTINCT ld_Student, ld_Discip1ina,
+-- FROM studenti reusita
+-- WHERE Tip _ Evaluare=' Examen' AND Nota>8
+-- GROUP BY GROUPING SETS ((1d_Student),
+-- (ld _
+SUM(Nota) AS Suma
+-- Disciplina));
+
+SELECT ld_Student, ld_Disciplina, SUM(Nota) AS Suma
+FROM studenti_reusita
+WHERE Tip_Evaluare='Examen' AND Nota>8
+GROUP BY ld_Student, ld_Disciplina;
+
+
+-- B) 	SELECT DISTINCT ld Student,
+-- FROM studenti reusita
+-- WHERE Tip _ Evaluare=' Examen '
+-- GROUP BY ROLLUP (ld_Student,
+-- ld _ Disciplina, SUM(Nota) AS Suma
+-- AND Nota>8
+-- ld _ Disciplina);
+
+SELECT ld_Student, ld_Disciplina, SUM(Nota) AS Suma
+FROM studenti_reusita
+WHERE Tip_Evaluare='Examen' AND Nota>8
+GROUP BY ld_Student, ld_Disciplina;
+
+
+-- C)      SELECT DISTINCT ld Student,
+-- ld _ Disciplina,
+-- ld Profesor,
+-- SUM(Nota) AS Suma
+-- FROM studenti reusita
+-- WHERE Tip _ Evaluare=' Examen' AND Nota>8
+-- GROUP BY CUBE (ld_Student, ld_Discip1ina,
+-- ld _ Profesor) ;
+
+SELECT ld_Student, ld_Disciplina, ld_Profesor, SUM(Nota) AS Suma
+FROM studenti_reusita
+WHERE Tip_Evaluare='Examen' AND Nota>8
+GROUP BY ld_Student, ld_Disciplina, ld_Profesor;
+
+-- 2.Să se creeze o interogare, care să afișeze identificatorul disciplinei, identificatorul grupei, ora, numărul total de ore pentru această grupă și totalul general obținut. Pentru aceasta, se folosite tabelul orarul.
+
+-- Pentru a realiza sasrcina data este necesar sa fie creată tabela orarul in baza de date universitatea. 
+-- Astfel prin sql se genereaza si se insereaza date.
+
+CREATE TABLE Orarul (
+    id_disciplina INT PRIMARY KEY IDENTITY(1,1),
+    id_grupa INT,
+    ora TIME,
+    nr_ore INT
+);
+
+INSERT INTO Orarul (id_grupa, ora, nr_ore) VALUES
+(101, '08:00:00', 2),
+(101, '10:00:00', 2),
+(102, '08:00:00', 2),
+(102, '10:00:00', 2),
+(103, '08:00:00', 2),
+(103, '10:00:00', 2);
+
+-- Acum este posibil de a realiza interogarea pe tabelul orar.
+SELECT 
+    id_disciplina,
+    id_grupa,
+    ora,
+    SUM(nr_ore) OVER (PARTITION BY id_grupa) AS total_ore_grupa,
+    SUM(nr_ore) OVER () AS total_ore_generale
+FROM 
+    Orarul;
+
+
+-- 3.Să se modifice interogarea de mai sus astfel, încât să afișeze identificatorul disciplinei,identificatorul profesorului numărul de ore e fiecare profesor si totalul eneral.
+
+SELECT 
+    sr.Id_Disciplina,
+    sr.Id_Profesor,
+    p.Nume_Profesor,
+    p.Prenume_Profesor,
+    COUNT(sr.Id_Student) AS Numar_Ore_Profesor,
+    SUM(sr.Nota) AS Total_General
+FROM 
+    studenti_reusita sr
+JOIN 
+    profesori p ON sr.Id_Profesor = p.Id_Profesor
+GROUP BY 
+    sr.Id_Disciplina,
+    sr.Id_Profesor,
+    p.Nume_Profesor,
+    p.Prenume_Profesor
+ORDER BY 
+    sr.Id_Disciplina,
+    sr.Id_Profesor;
+
+
+
+-- 4.Să se modifice interogarea de mai sus astfel, încât să afișeze identificatorul disciplinei, identificatorul profesorului, identificatorul grupei, numărul de ore pe fiecare profesor și pentru fiecare grupă, și totalul general.
+
+SELECT 
+    sr.Id_Disciplina,
+    sr.Id_Profesor,
+    sr.Id_Grupa,
+    COUNT(sr.Id_Student) AS Numar_Ore_Profesor_Grupa,
+    SUM(sr.Nota) AS Total_General
+FROM 
+    studenti_reusita sr
+GROUP BY 
+    sr.Id_Disciplina,
+    sr.Id_Profesor,
+    sr.Id_Grupa
+ORDER BY 
+    sr.Id_Disciplina,
+    sr.Id_Profesor,
+    sr.Id_Grupa;
+
+
+
+-- 5.Să se rescrie 2 interogări formulate în exercițiile din capitolul 4, în așa fel. Încât interogările imbricate să fie redate sub forma expresiilor CTE.
+
+-- 2 interogări formulate în exercițiile din capitolul 4
+-- 1.Aflați toate datele despre grupele de studii de Ia facultate.
+SELECT *
+FROM grupe
+WHERE Nume_Facultate = 'Facultatea X';
+
+-- 2.Să se obțină lista disciplinelor în ordine descrescătoare a numărului de ore.
+SELECT *
+FROM discipline
+ORDER BY Nr_ore_plan_disciplina DESC;
+
+-- Interogările imbricate să fie redate sub forma expresiilor CTE
+-- Interogarea pentru datele despre grupele de studii de la o anumită facultate
+WITH GrupeFacultate AS (
+    SELECT *
+    FROM grupe
+    WHERE Nume_Facultate = 'Cibernetica'
+)
+SELECT *
+FROM GrupeFacultate;
+
+-- Interogarea pentru lista disciplinelor, fără ordonare
+WITH DisciplineOrdinate AS (
+    SELECT *
+    FROM discipline
+)
+SELECT *
+FROM DisciplineOrdinate
+ORDER BY Nr_ore_plan_disciplina DESC;

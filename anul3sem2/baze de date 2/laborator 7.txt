@@ -1,0 +1,121 @@
+-- Sarcini practice:
+-- 1.Să construiască un cub OLAP, utilizând, în calitate de sursă de date, tabelele ce constituie baza de date universitatea și vederile create asupra acesteia.
+
+-- Pentru a construi un cub OLAP (Online Analytical Processing) în SQL Server folosind datele din baza de date universitatea, se vor urma acești pași:
+-- 1.Crearea unei vederi pentru datele OLAP: se va crea vederi care vor fi utilizate ca sursă pentru cubul OLAP. Aceste vederi vor prelua date din tabelele existente pentru a forma o structură potrivită pentru analiza OLAP.
+
+-- Crearea vederii pentru dimensiunea Student
+CREATE VIEW vw_Student AS
+SELECT Id_Student, Nume_Student, Prenume_Student, Data_Nastere_Student, Adresa_Postala_Student
+FROM studenti;
+
+-- Crearea vederii pentru dimensiunea Disciplină
+CREATE VIEW vw_Disciplina AS
+SELECT Id_Disciplina, Disciplina, Nr_ore_plan_disciplina
+FROM discipline;
+
+-- Crearea vederii pentru dimensiunea Profesor
+CREATE VIEW vw_Profesor AS
+SELECT Id_Profesor, Nume_Profesor, Prenume_Profesor, Adresa_Postala_Profesor
+FROM profesori;
+
+-- Crearea vederii pentru dimensiunea Grupă
+CREATE VIEW vw_Grupa AS
+SELECT Id_Grupa, Cod_Grupa, Specialitate, Nume_Facultate
+FROM grupe;
+
+-- Crearea vederii pentru fapta Notă Student
+CREATE VIEW vw_Nota_Student AS
+SELECT sr.Id_Student, sr.Id_Disciplina, sr.Id_Profesor, sr.Id_Grupa, d.Disciplina, p.Nume_Profesor, g.Cod_Grupa, s.Nume_Student, s.Prenume_Student, sr.Nota, sr.Data_Evaluare
+FROM studenti_reusita sr
+JOIN discipline d ON sr.Id_Disciplina = d.Id_Disciplina
+JOIN profesori p ON sr.Id_Profesor = p.Id_Profesor
+JOIN grupe g ON sr.Id_Grupa = g.Id_Grupa
+JOIN studenti s ON sr.Id_Student = s.Id_Student;
+
+
+-- 2.Definirea structurii cubului OLAP: se va defini dimensiuni și fapte pentru cubul OLAP. Dimensiunile vor fi caracteristicile pe baza cărora se va analiza (de exemplu, Student, Disciplină, Profesor, etc.), iar faptele vor reprezenta măsurile pe care dorim să le analizăm (de exemplu, Notele studenților în diferite discipline).
+-- Definirea dimensiunilor cubului OLAP
+CREATE DIMENSION Dim_Student
+AS
+(
+   HIERARCHY [Student]
+   (
+      [Nume_Student],
+      [Prenume_Student],
+      [Adresa_Postala_Student]
+   )
+);
+
+CREATE DIMENSION Dim_Disciplina
+AS
+(
+   HIERARCHY [Disciplina]
+   (
+      [Disciplina],
+      [Nr_ore_plan_disciplina]
+   )
+);
+
+CREATE DIMENSION Dim_Profesor
+AS
+(
+   HIERARCHY [Profesor]
+   (
+      [Nume_Profesor],
+      [Prenume_Profesor],
+      [Adresa_Postala_Profesor]
+   )
+);
+
+CREATE DIMENSION Dim_Grupa
+AS
+(
+   HIERARCHY [Grupa]
+   (
+      [Cod_Grupa],
+      [Specialitate],
+      [Nume_Facultate]
+   )
+);
+
+-- Definirea faptelor cubului OLAP
+CREATE FACT Fact_Nota_Student
+(
+   [Id_Student] INTEGER REFERENCES Dim_Student,
+   [Id_Disciplina] INTEGER REFERENCES Dim_Disciplina,
+   [Id_Profesor] INTEGER REFERENCES Dim_Profesor,
+   [Id_Grupa] INTEGER REFERENCES Dim_Grupa,
+   [Nota] TINYINT,
+   [Data_Evaluare] DATE
+);
+
+-- 3.Crearea cubului OLAP: Folosind structura definită, se vacrea efectiv cubul OLAP care poate fi utilizat pentru analiza multidimensională.
+-- Crearea cubului OLAP
+CREATE CUBE Universitatea_Cube
+(
+   DIMENSION Dim_Student,
+   DIMENSION Dim_Disciplina,
+   DIMENSION Dim_Profesor,
+   DIMENSION Dim_Grupa,
+   FACT Fact_Nota_Student
+);
+
+-- 2.Să se scrie câte două exemple de interogări MDX asupra cubului creat.
+-- Exemplu 1: Calcularea mediei notelor pentru fiecare disciplină
+SELECT
+    [Dim_Disciplina].[Disciplina].Members ON ROWS,
+    AVG([Measures].[Nota]) ON COLUMNS
+FROM
+    [Universitatea_Cube];
+
+-- Exemplu 2: Afișarea celor mai buni 5 studenți în funcție de media notelor lor
+SELECT
+    {[Measures].[Nota]} ON COLUMNS,
+    TOPCOUNT(
+        [Dim_Student].[Nume_Student].Members,
+        5,
+        [Measures].[Nota]
+    ) ON ROWS
+FROM
+    [Universitatea_Cube];
