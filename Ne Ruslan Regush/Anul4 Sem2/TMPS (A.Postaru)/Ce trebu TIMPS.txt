@@ -1,0 +1,240 @@
+- 1 lucrare - Sabloane Creaționale (3-5)
+- 2 lucrare -  Sabloane Structurale (3-5)
+- 3 lucrare -  Sabloane de Comportament (3-5)
+pentru fiecare un proiect aparte, in raport indicam diagrama simpla a paternului si diagrama specifica cazului nostru
+
+și fiecare șablon trebuie să fie în felul următor: Șablonul schematic, Codul, și apoi șablonul schematic unde se arată ce clasă din codul nostru corespunde cu cu clasa din schemă
+
+
+Examen ORAL!  2 principii solide
+
+https://ru.scribd.com/doc/259186098/Sabloane-de-proiectare
+https://github.com/IuraCPersonal/tmps?tab=readme-ov-file
+Raport descrie cod proiect!
+
+Intrebari examinare TMPS
+Descrieți și exemplificați șabloane de proiectare/principiile:
+Abstract Factory
+Builder
+Factory Method
+Prototype
+Singleton
+Object Pool
+Adapter
+Bridge
+Composite
+Decorator
+Flyweight
+Proxy
+Façade
+Mediator
+Observer
+Memento
+Visitor
+Strategy
+Chain of Responsibility
+State
+ 
+SOLID
+SRP
+OCP
+LSP
+ISP
+DIP
+
+
+
+
+Creational 
+
+                     +----------------------+
+                     |  DatabaseConnection  |
+                     +----------------------+
+                     | - instance: DatabaseConnection |
+                     +----------------------+
+                     | + getInstance(): DatabaseConnection |
+                     | + connect(): void     |
+                     +----------------------+
+                                |
+                                |
+                                v
+                     +----------------------+
+                     |         Main         |
+                     +----------------------+
+                     | + main(args: String[]): void |
+                     +----------------------+
+                                |
+      +-------------------------+-------------------------+
+      |                         |                         |
+      v                         v                         v
++------------------+   +------------------+   +------------------+
+|     Creator      |   |     Builder      |   | ProductBuilder   |
++------------------+   +------------------+   +------------------+
+| + factoryMethod(): Product | + buildPartA(): void    | + setPartA(a: String): void |
+| + operation(): void         | + buildPartB(): void    | + setPartB(b: String): void |
++------------------+   | + getResult(): ProductBuilder | +--------------------------+
+      ^                  +------------------+   | + toString(): String        |
+      |                         ^                  +--------------------------+
++------------------+   +------------------+
+| ConcreteCreatorA |   |  ConcreteBuilder |
++------------------+   +------------------+
+| + factoryMethod(): Product |
++------------------+   + buildPartA(): void |
+                         + buildPartB(): void |
++------------------+   +------------------+
+| ConcreteCreatorB |
++------------------+
+| + factoryMethod(): Product |
++------------------+
+      ^                         ^
+      |                         |
+      +---------+ +---------+
+                v           v
++------------------+ +------------------+
+| ConcreteProductA | | ConcreteProductB |
++------------------+ +------------------+
+| + use(): void    | | + use(): void    |
++------------------+ +------------------+
+
++------------------+
+|     Director     |
++------------------+
+| - builder: Builder |
+| + construct(): void |
++------------------+
+
+
+
+Structural 
+
+                    +------------------+
+                    |     Main         |
+                    +------------------+
+                    | + main(args: String[]): void |
+                    +------------------+
+                              |
+                              |
+                              v
+      +-----------------------+----------------------------+
+      |                       |                            |
+      v                       v                            v
++------------------+  +-------------------+     +-------------------+
+|      Toy         |  |      OldToy       |     |    ToyComponent   |
++------------------+  +-------------------+     +-------------------+
+| + play(): void   |  | + makeNoise(): void |     | + play(): void   |
++------------------+  +-------------------+     +-------------------+
+      ^                                            ^
+      |                                            |
++------------------+                               |
+|   BasicToy       |                               |
++------------------+                               |
+| + play(): void   |                               |
++------------------+                               |
+      ^                                            |
+      |                                            |
++------------------+                               |
+|  ToyDecorator    |                               |
++------------------+                               |
+| - decoratedToy: Toy  |                          |
+| + play(): void        |                          |
++------------------+                               |
+      ^                                            |
+      |                                            |
++------------------+                               |
+|   MusicalToy     |                               |
++------------------+                               |
+| + play(): void        |                          |
+| + setMusic(Toy): void |                          |
++------------------+                               |
+                                                    |
+                                                    |
+                                             +------------------+
+                                             |  ToyLeaf         |
+                                             +------------------+
+                                             | - name: String   |
+                                             | + play(): void   |
+                                             +------------------+
+                                                      ^
+                                                      |
+                                               +------------------+
+                                               |  ToyComposite    |
+                                               +------------------+
+                                               | - toys: List<ToyComponent> |
+                                               | + add(toy: ToyComponent): void |
+                                               | + remove(toy: ToyComponent): void |
+                                               | + play(): void                |
+                                               +------------------+
+                                                      ^
+                                                      |
+                                               +------------------+
+                                               |  ToyAdapter      |
+                                               +------------------+
+                                               | - oldToy: OldToy |
+                                               | + play(): void   |
+                                               +------------------+
+
+
+
+Comportament
+
+                       +-------------------+
+                       |       Main        |
+                       +-------------------+
+                       | + main(args: String[]): void |
+                       +-------------------+
+                               |
+                               |
+                               v
+        +----------------------+-------------------------+
+        |                      |                         |
+        v                      v                         v
++-------------------+  +-------------------+     +-------------------+
+|     ToyStore      |  |      Toy          |     |  RemoteControl    |
++-------------------+  +-------------------+     +-------------------+
+| - observers: List<Observer> | - playStrategy: PlayStrategy | - command: Command |
+| - newToy: String    | + setPlayStrategy(ps: PlayStrategy): void | + setCommand(cmd: Command): void |
+| + addObserver(obs: Observer): void | + performPlay(): void | + pressButton(): void |
+| + removeObserver(obs: Observer): void| +-------------------+     +-------------------+
+| + setNewToy(toy: String): void         |                         |
+| + notifyAllObservers(): void           |                         |
++-------------------+                    |                         |
+        ^                                 |                         |
+        |                                 |                         |
++-------------------+                     |                         |
+|     Observer      |                     |                         |
++-------------------+                     |                         |
+| + update(): void  |                     |                         |
++-------------------+                     |                         |
+        ^                                 |                         |
+        |                                 |                         |
++-------------------+                     |                         |
+|   ToyObserver     |                     |                         |
++-------------------+                     |                         |
+| - toyStore: ToyStore |                  |                         |
+| + update(): void  |                     |                         |
++-------------------+                     |                         |
+                                          |                         |
+                                          v                         v
+                                    +-------------------+     +-------------------+
+                                    |   PlayStrategy    |     |      Command      |
+                                    +-------------------+     +-------------------+
+                                    | + play(): void    |     | + execute(): void |
+                                    +-------------------+     +-------------------+
+                                            ^                        ^
+                                            |                        |
+          +---------------------------------+---+                    |
+          |                                     |                    |
++-------------------+     +-------------------+  |                    |
+| SimplePlayStrategy|     | ComplexPlayStrategy|  |                    |
++-------------------+     +-------------------+  |                    |
+| + play(): void    |     | + play(): void    |  |                    |
++-------------------+     +-------------------+  |                    |
+                                                 |                    |
+                                                 v                    |
+                                         +-------------------+        |
+                                         |   PlayCommand     |        |
+                                         +-------------------+        |
+                                         | - toy: Toy        |        |
+                                         | + execute(): void |        |
+                                         +-------------------+        |
+
