@@ -1,0 +1,61 @@
+
+sergiu.cojocaru@ati.utm.md
+
+
+Programarea in retea
+Laborator 1 PR  - spoate de facut in Python (pycharm)
+1 aplicatii server,   Scriti nume -> salut nume scris       port 5000
+parte client care se conecteaza la server      (pornim server, pe urmă client)   
+De lucrat cu socket
+// aplicatie server care permite sa asculte portul 5000, care primeste un mesaj de la client "Nume, Prenume" si trimite mesaj "Salut, NP"
+// aplicatia client care face request de acest mesaj
+
+Laborator 2 PR
+Clientul se conectează trimite ceva serverul răspunde iar trimite ceva serverul răspunde la infinit, 
+trebuie de conectat concomitent 5-6 clienți concomitent. Am învățat funcția THREAD, 
+probabil trebuie de o folosit la acest laborator. Thread o să fie la examen
+
+Laborator 3 PR
+De creat un socket client care se va adresa paginii fcim.utm.md si va primi pagina. 
+Tipul Get, Adresa, Header…. Și trebuie să primim textul HTML
+
+
+Lab4 Daca vrei să fii eliberat de la laborator
+Create Client that question the DNS server the Domain and Ip
+If user enter the Domain return Ip
+If User enter the Ip return the Domain
+If is Domain return MX record where is located the server
+
+PR, semestrul 2
+3 lab-uri, fara raport, arhivat si transmis pe posta lui sergiu.cojocaru@ati.utm.md
+
+Examen pe moodle - mai mult teorie.
+
+Profesor lucr.
+fullstuck- dotnet angular react 
+
+
+https://habr.com/ru/articles/327574/
+https://habr.com/ru/articles/327574/
+https://learn.microsoft.com/ru-ru/windows/win32/api/winsock2/nf-winsock2-socket
+https://www.c-sharpcorner.com/article/socket-programming-in-C-Sharp/
+
+
+
+
+
+
+Programarea in retea 
+ ○ Laborator 1 
+  – aplicatie server care permite sa asculte portul 5000, care primeste un mesaj de la client "Nume, Prenume" si trimite mesaj "Salut, NP"
+  – aplicatia client care face request de acest mesaj
+ ○ Laborator 2
+  Clientul se conectează trimite ceva, serverul răspunde iar trimite ceva serverul răspunde la infinit, trebuie de conectat concomitent 5-6 clienți concomitent. 
+ ○ Laborator 3
+  Aplicatie client html, unde intializam socjket, ne conectam la fcim site si facem request sa ne afiseze pagina html (tipul get, adresa, header) si sa primim textul html
+   App server and client, cliend request la server si serverul return html site-ului fcim.utm.md/(o adresa)
+ ○ Laborator 4 (pentru a fi eliberat de la examen)
+  Create Client that question the DNS server the Domain and Ip
+  If user enter the Domain return Ip
+  If User enter the Ip return the Domain
+If is Domain return MX record where is located the server
